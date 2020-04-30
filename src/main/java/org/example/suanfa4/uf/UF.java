@@ -1,9 +1,9 @@
 package org.example.suanfa4.uf;
 
-public class UF {
+public abstract class UF {
 
-    private int[] id;
-    private int count;
+    protected int[] id;
+    protected int count;
 
     /**
      * init n UF node
@@ -11,8 +11,8 @@ public class UF {
      * @param n int
      */
     public UF(int n) {
-        this.count = n;
-        this.id = new int[n];
+        count = n;
+        id = new int[n];
         for (int i = 0; i < n; i++) {
             id[i] = i;
         }
@@ -24,9 +24,7 @@ public class UF {
      * @param p int
      * @param q int
      */
-    public void union(int p, int q) {
-        //todo
-    }
+    public abstract void union(int p, int q);
 
     /**
      * find node p in which group
